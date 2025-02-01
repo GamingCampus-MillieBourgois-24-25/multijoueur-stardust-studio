@@ -1,3 +1,55 @@
-﻿  TTT_Multi.vcxproj -> C:\Users\Ivania\Downloads\_PROGRAMMES\TTT_Multi\x64\Debug\TTT_Multi.exe
-  'pwsh.exe' n'est pas reconnu en tant que commande interne
-  ou externe, un programme exécutable ou un fichier de commandes.
+﻿  client.cpp
+C:\Users\Ivania\source\repos\multijoueur-stardust-studio\sockets.h(126,38): error C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  (compiler le fichier source 'client.cpp')
+  
+  server.cpp
+C:\Users\Ivania\source\repos\multijoueur-stardust-studio\sockets.h(126,38): error C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  (compiler le fichier source 'server.cpp')
+  
+C:\Users\Ivania\source\repos\multijoueur-stardust-studio\server.cpp(35,30): error C2440: 'initialisation' : impossible de convertir de 'const char [3]' en 'char *'
+  C:\Users\Ivania\source\repos\multijoueur-stardust-studio\server.cpp(35,30):
+  La conversion d'un littéral de chaîne perd le qualificateur const (voir /Zc:strictStrings)
+  
+  Source.cpp
+C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\libraries\include\SFML\System\Exception.hpp(41,47): warning C4275: interface non dll class 'std::runtime_error' utilisée comme base d'une interface dll class 'sf::Exception'
+  (compiler le fichier source 'Source.cpp')
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\stdexcept(100,19):
+  voir la déclaration de 'std::runtime_error'
+  C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\libraries\include\SFML\System\Exception.hpp(41,23):
+  voir la déclaration de 'sf::Exception'
+  
+C:\Users\Ivania\source\repos\multijoueur-stardust-studio\sockets.h(126,38): error C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  (compiler le fichier source 'Source.cpp')
+  
+C:\Users\Ivania\source\repos\multijoueur-stardust-studio\sockets.h(5,6): error C2084: la fonction 'void cleanupWinSock(void)' a déjà un corps
+  (compiler le fichier source 'Source.cpp')
+  C:\Users\Ivania\source\repos\multijoueur-stardust-studio\sockets.h(5,6):
+  voir la définition précédente de 'cleanupWinSock'
+  
+C:\Users\Ivania\source\repos\multijoueur-stardust-studio\sockets.h(9,22): error C2011: 'Socket_binding' : redéfinition du type 'class'
+  (compiler le fichier source 'Source.cpp')
+  C:\Users\Ivania\source\repos\multijoueur-stardust-studio\sockets.h(9,7):
+  voir la déclaration de 'Socket_binding'
+  
+C:\Users\Ivania\source\repos\multijoueur-stardust-studio\sockets.h(109,25): error C2011: 'Connection_client' : redéfinition du type 'class'
+  (compiler le fichier source 'Source.cpp')
+  C:\Users\Ivania\source\repos\multijoueur-stardust-studio\sockets.h(109,7):
+  voir la déclaration de 'Connection_client'
+  
+C:\Users\Ivania\source\repos\multijoueur-stardust-studio\sockets.h(141,21): error C2011: 'Server_client' : redéfinition du type 'class'
+  (compiler le fichier source 'Source.cpp')
+  C:\Users\Ivania\source\repos\multijoueur-stardust-studio\sockets.h(141,7):
+  voir la déclaration de 'Server_client'
+  
+C:\Users\Ivania\source\repos\multijoueur-stardust-studio\client.h(14,9): error C2086: 'WSADATA wsaData' : redéfinition
+  (compiler le fichier source 'Source.cpp')
+  C:\Users\Ivania\source\repos\multijoueur-stardust-studio\server.h(13,9):
+  voir la déclaration de 'wsaData'
+  
+C:\Users\Ivania\source\repos\multijoueur-stardust-studio\client.h(15,19): error C2079: 'client_socket' utilise une class de 'Connection_client' non défini
+  (compiler le fichier source 'Source.cpp')
+  
+C:\Users\Ivania\source\repos\multijoueur-stardust-studio\client.h(16,15): error C2079: 'host_socket' utilise une class de 'Server_client' non défini
+  (compiler le fichier source 'Source.cpp')
+  
+  Génération de code en cours...

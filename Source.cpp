@@ -1,28 +1,25 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include "server.h"
+#include "client.h"
 
 
 int main()
 {
     // Create the main window
-    sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "SFML window");
+    sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "Chat Application");
+    // Ask user if they want to run as server or client
+    std::cout << "Run as (s)erver or (c)lient? ";
+    char choice;
+    std::cin >> choice;
 
-
-    // Start the game loop
-    while (window.isOpen())
-    {
-        // Process events
-        while (const std::optional event = window.pollEvent())
-        {
-            // Close window: exit
-            if (event->is<sf::Event::Closed>())
-                window.close();
-        }
-
-        // Clear screen
-        window.clear();
-
-        // Update the window
-        window.display();
+    if (choice == 's' || choice == 'S') {
+        RunServer();
+    }
+    else if (choice == 'c' || choice == 'C') {
+        RunClient();
+    }
+    else {
+        std::cout << "Invalid choice. Exiting." << std::endl;
     }
 }
