@@ -22,8 +22,9 @@ Server_client host_socket;
 Connection_client client_socket;
 std::queue<std::string> send_events;
 std::queue<std::string> recived_events;
-sf::Font font("Ac437_IBM_BIOS.ttf");
-sf::Text text(font,"Salem");
+sf::Font font;
+
+sf::Text text(font);
 
 const sf::RenderStates sf::RenderStates::Default;
 
@@ -296,6 +297,12 @@ int main(int argc, char* argv[]) {
     }
 
 
+
+    if (!font.openFromFile("Ac437_IBM_BIOS.ttf"))
+    {
+        std::cerr << "Wasn't able to load font";
+        return 1;
+    }
 
     char current_player_char;
     if (mode == "server") {
