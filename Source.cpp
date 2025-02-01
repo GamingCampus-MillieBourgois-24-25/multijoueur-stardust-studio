@@ -15,10 +15,12 @@ int main()
 
     if (choice == 's' || choice == 'S') {
         //RunServer();
+        std::cout << "Run as server." << std::endl;
         return 0;
     }
     else if (choice == 'c' || choice == 'C') {
         //RunClient();
+        std::cout << "Run as client." << std::endl;
         return 1;
     }
     else {

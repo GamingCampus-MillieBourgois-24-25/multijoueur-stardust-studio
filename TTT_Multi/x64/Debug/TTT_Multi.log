@@ -1,8 +1,4 @@
-﻿  network.cpp
-C:\Users\Ivania\source\repos\multijoueur-stardust-studio\sockets.h(126,38): error C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-  (compiler le fichier source 'network.cpp')
-  
-  Source.cpp
+﻿  Source.cpp
 C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\libraries\include\SFML\System\Exception.hpp(41,47): warning C4275: interface non dll class 'std::runtime_error' utilisée comme base d'une interface dll class 'sf::Exception'
   (compiler le fichier source 'Source.cpp')
   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\stdexcept(100,19):
@@ -10,7 +6,8 @@ C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\libraries\include\SFML\
   C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\libraries\include\SFML\System\Exception.hpp(41,23):
   voir la déclaration de 'sf::Exception'
   
-C:\Users\Ivania\source\repos\multijoueur-stardust-studio\sockets.h(126,38): error C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-  (compiler le fichier source 'Source.cpp')
-  
+  network.cpp
   Génération de code en cours...
+  TTT_Multi.vcxproj -> C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\x64\Debug\TTT_Multi.exe
+  'pwsh.exe' n'est pas reconnu en tant que commande interne
+  ou externe, un programme exécutable ou un fichier de commandes.

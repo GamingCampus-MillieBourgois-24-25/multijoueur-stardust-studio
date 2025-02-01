@@ -10,10 +10,6 @@
 #define PORT 8080
 #define HAND_CHECK_BUFFER_SIZE 5
 #define BUFFER_SIZE 1024
-WSADATA wsaData;
-Server_client host_socket;
-Connection_client client_socket;
-
 
 void handleClient(SOCKET clientSocket, sockaddr_in clientAddr, int clientAddrSize);
 int RunServer();

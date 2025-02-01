@@ -1,8 +1,14 @@
 #include <winsock2.h>
 #include <iostream>
-#include <ws2tcpip.h>
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
-void cleanupWinSock() {
+#include <ws2tcpip.h>
+
+//#pragma warning(suppress : 4996)
+//#pragma warning(disable : 4996)
+#ifndef SOCKETS_H
+#define SOCKETS_H
+void cleanupWinSock();
+inline void cleanupWinSock() {
     WSACleanup();
 }
 
@@ -123,7 +129,12 @@ public:
 
         // Set up server address structure
         serverAddr.sin_family = AF_INET;
-        serverAddr.sin_addr.s_addr = inet_addr(address_arg);
+        if (inet_pton(AF_INET, address_arg, &(serverAddr.sin_addr)) <= 0) {
+            std::cerr << "Invalid address/ Address not supported" << std::endl;
+            closesocket(sock);
+            WSACleanup();
+            exit(1);
+        }
         serverAddr.sin_port = htons(atoi(port_arg));
 
         // Connect to server
@@ -134,7 +145,6 @@ public:
             exit(1);
         }
     }
-
     Connection_client() {}
 };
 
@@ -175,3 +185,8 @@ public:
     }
     Server_client() {}
 };
+
+
+
+
+#endif // SOCKETS_H
