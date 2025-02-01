@@ -160,8 +160,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="network.cpp" />
-    <ClCompile Include="Source.cpp" />
-    <ClCompile Include="sockets.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sockets.h" />

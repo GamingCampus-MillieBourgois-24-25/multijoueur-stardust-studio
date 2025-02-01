@@ -7,7 +7,7 @@
 int main()
 {
     // Create the main window
-    sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "Chat Application");
+    sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "Online - TicTacToe");
     // Ask user if they want to run as server or client
     std::cout << "Run as (s)erver or (c)lient? ";
     char choice;
