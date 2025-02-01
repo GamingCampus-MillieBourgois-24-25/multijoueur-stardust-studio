@@ -1,7 +1,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "server.h"
-#include "client.h"
+#include "network.h"
+
 
 
 int main()

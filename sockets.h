@@ -1,7 +1,7 @@
 #include <winsock2.h>
 #include <iostream>
 #include <ws2tcpip.h>
-
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
 void cleanupWinSock() {
     WSACleanup();
 }
