@@ -165,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="client.h" />
+    <ClInclude Include="include.h" />
     <ClInclude Include="sockets.h" />
     <ClInclude Include="server.h" />
   </ItemGroup>
