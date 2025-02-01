@@ -11,7 +11,6 @@ void handleClient(SOCKET clientSocket, sockaddr_in clientAddr, int clientAddrSiz
     inet_ntop(AF_INET, &clientAddr.sin_addr, clientIP, INET_ADDRSTRLEN);
     int clientPort = ntohs(clientAddr.sin_port);
 
-    // std::cout << "Client connected from IP: " << clientIP << ", Port: " << clientPort << "\n";
 
     while (true) {
         int bytesReceived = recv(clientSocket, buffer, HAND_CHECK_BUFFER_SIZE, 0);
@@ -41,6 +40,8 @@ void handleClient(SOCKET clientSocket, sockaddr_in clientAddr, int clientAddrSiz
     }
     closesocket(clientSocket);
 }
+
+
 int RunServer() {
 
     // Initialize Winsock
@@ -94,6 +95,9 @@ void handle_client(SOCKET clientSocket, sockaddr_in clientAddr, int clientAddrSi
         }
     }
 }
+
+
+
 int RunClient() {
 
     // Initialize Winsock

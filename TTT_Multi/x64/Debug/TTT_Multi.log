@@ -1,11 +1,1 @@
-﻿  main.cpp
-C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\libraries\include\SFML\System\Exception.hpp(41,47): warning C4275: interface non dll class 'std::runtime_error' utilisée comme base d'une interface dll class 'sf::Exception'
-  (compiler le fichier source 'main.cpp')
-  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\stdexcept(100,19):
-  voir la déclaration de 'std::runtime_error'
-  C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\libraries\include\SFML\System\Exception.hpp(41,23):
-  voir la déclaration de 'sf::Exception'
-  
-  TTT_Multi.vcxproj -> C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\x64\Debug\TTT_Multi.exe
-  'pwsh.exe' n'est pas reconnu en tant que commande interne
-  ou externe, un programme exécutable ou un fichier de commandes.
+﻿  TTT_Multi.vcxproj -> C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\x64\Debug\TTT_Multi.exe
