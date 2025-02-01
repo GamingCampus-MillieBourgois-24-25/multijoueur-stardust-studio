@@ -1,6 +1,4 @@
 #include "server.h"
-Server_client host_socket;
-Connection_client client_socket;
 
 
 void handleClient(SOCKET clientSocket, sockaddr_in clientAddr, int clientAddrSize) {

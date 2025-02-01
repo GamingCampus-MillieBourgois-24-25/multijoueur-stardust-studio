@@ -14,10 +14,12 @@ int main()
     std::cin >> choice;
 
     if (choice == 's' || choice == 'S') {
-        RunServer();
+        //RunServer();
+        return 0;
     }
     else if (choice == 'c' || choice == 'C') {
-        RunClient();
+        //RunClient();
+        return 1;
     }
     else {
         std::cout << "Invalid choice. Exiting." << std::endl;
