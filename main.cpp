@@ -3,11 +3,11 @@
 #include "sockets.h"
 #include <thread>
 #include <queue>
+#include <vector>
 #include <SFML/Graphics.hpp>
-//#include <SFML/Graphics/Font.hpp>
 #include <SFML/Window.hpp>
-#include <iostream>
 #include <SFML/System.hpp>
+#include <iostream>
 
 #pragma comment(lib, "ws2_32.lib")
 
@@ -22,9 +22,12 @@ Server_client host_socket;
 Connection_client client_socket;
 std::queue<std::string> send_events;
 std::queue<std::string> recived_events;
-sf::Font font;
 
+std::vector<sf::Text> chatMessages;
+sf::Font font;
 sf::Text text(font);
+sf::Text chat(font);
+std::string userInput;
 
 const sf::RenderStates sf::RenderStates::Default;
 
@@ -178,6 +181,7 @@ char check_win() {
     if (board[2][0] == board[1][1] && board[1][1] == board[0][2] && board[0][2] != '#') return board[0][2];
     return '#';
 }
+
 void send_message(std::string message) {
     char buffer[BUFFER_SIZE];
     for (int i = 0; i < BUFFER_SIZE; i++) {
@@ -189,6 +193,12 @@ void send_message(std::string message) {
 
     std::memcpy(buffer + 1, message.c_str(), message.size());
     send(client_socket.sock, buffer, sizeof(buffer), 0);
+
+    sf::Text messageText(font);
+    messageText.setString(message);
+    messageText.setCharacterSize(10);
+    messageText.setPosition(sf::Vector2f(825, 770 - chatMessages.size() * 20));
+    chatMessages.push_back(messageText);
 }
 
 void send_board(char board[3][3]) {
@@ -235,7 +245,18 @@ void process_event(std::string event) {
     char data[BUFFER_SIZE - 1];
     std::memcpy(data, event.c_str() + 1, BUFFER_SIZE - 1);
     // std::cout << "Data: " << data << std::endl;
+    if ((int)event[0] == 6) {
+        // Display the received message in the chat window
+        std::string message(data);  // Assuming the message is in the data array
+        std::cout << "Received message: " << message << std::endl;
 
+        // Add the received message to the chat window
+        sf::Text messageText(font);
+        messageText.setString(message);
+        messageText.setCharacterSize(10);
+        messageText.setPosition(sf::Vector2f(825, 770 - chatMessages.size() * 20));
+        chatMessages.push_back(messageText);
+    }
     if ((int)event[0] == 5) {
         last_player = event[1];
     }
@@ -266,7 +287,6 @@ void process_event(std::string event) {
     }
 }
 
-
 int main(int argc, char* argv[]) {
 
     std::string mode;
@@ -296,8 +316,6 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-
-
     if (!font.openFromFile("Ac437_IBM_BIOS.ttf"))
     {
         std::cerr << "Wasn't able to load font";
@@ -305,6 +323,7 @@ int main(int argc, char* argv[]) {
     }
 
     char current_player_char;
+
     if (mode == "server") {
         current_player_char = 'x';
     }
@@ -313,17 +332,20 @@ int main(int argc, char* argv[]) {
     }
 
     //font.loadFromFile("Ac437_IBM_BIOS.ttf");
-    sf::RenderWindow window(sf::VideoMode({800,800}), "Tic Tac Toe");
-
+    sf::RenderWindow window(sf::VideoMode({1020,800}), "Tic Tac Toe");
 
     const int BOARD_SIZE = 3;
     const int ROW_SPACING = 800 / 3;
     const int COLUMN_SPACING = 800 / 3;
 
- 
+    chat.setFont(font);
+    chat.setCharacterSize(10);
+    chat.setString("Start typing");
+    chat.setPosition(sf::Vector2f(825, 770));
+
+
     while (true) 
     {
-        //sf::Window::Event event;
         while (const std::optional event = window.pollEvent()) {
             if (event->is<sf::Event::Closed>()) {
                 window.close();
@@ -344,11 +366,36 @@ int main(int argc, char* argv[]) {
                 }
 
             }
+            else if (const auto* textEvent = event->getIf<sf::Event::TextEntered>()) {
+                char32_t unicodeChar = textEvent->unicode;
+
+                if (unicodeChar >= 32 && unicodeChar != 127) {
+                    userInput += unicodeChar;
+                    std::cout << "Character typed: " << static_cast<char>(unicodeChar) << std::endl;
+                }
+                // Handle backspace
+                else if (unicodeChar == 8 && !userInput.empty()) {
+                    userInput.pop_back();
+                }
+
+                chat.setString(userInput);
+            }
+            else if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>())
+            {
+                if (keyPressed->scancode == sf::Keyboard::Scancode::Enter)
+                {
+                    send_message(userInput);
+                    userInput.clear();
+                    
+                }
+            }
+
         }
 
 
         if (recived_events.size() != 0) {
             std::cout << "Recieved: " << recived_events.front() << std::endl;
+
             process_event(recived_events.front());
             recived_events.pop();
         }
@@ -370,7 +417,12 @@ int main(int argc, char* argv[]) {
         }
 
         text.setPosition(sf::Vector2f(0, 800 - (24 * 1.25)));
+
         window.draw(text);
+        for (auto& message : chatMessages)
+            window.draw(message);
+        window.draw(chat);
+    
 
         text.setFillColor(sf::Color::White);
         for (int x = 0; x < 3; x++) {
