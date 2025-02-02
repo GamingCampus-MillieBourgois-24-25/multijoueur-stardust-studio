@@ -14,17 +14,16 @@ C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(373,34): warni
 C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(373,34): warning C4244:         [
 C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(373,34): warning C4244:             _Elem=char
 C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(373,34): warning C4244:         ]
-C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(433,80): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(433,80): warning C4244:         with
-C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(433,80): warning C4244:         [
-C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(433,80): warning C4244:             T=float
-C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(433,80): warning C4244:         ]
-C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(433,62): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(433,62): warning C4244:         with
-C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(433,62): warning C4244:         [
-C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(433,62): warning C4244:             T=float
-C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(433,62): warning C4244:         ]
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(434,80): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(434,80): warning C4244:         with
+C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(434,80): warning C4244:         [
+C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(434,80): warning C4244:             T=float
+C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(434,80): warning C4244:         ]
+C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(434,62): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(434,62): warning C4244:         with
+C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(434,62): warning C4244:         [
+C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(434,62): warning C4244:             T=float
+C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\main.cpp(434,62): warning C4244:         ]
   TTT_Multi.vcxproj -> C:\Users\Ivania\Source\Repos\multijoueur-stardust-studio\x64\Debug\TTT_Multi.exe
   'pwsh.exe' n'est pas reconnu en tant que commande interne
   ou externe, un programme exécutable ou un fichier de commandes.

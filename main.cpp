@@ -340,8 +340,8 @@ int main(int argc, char* argv[]) {
 
     chat.setFont(font);
     chat.setCharacterSize(10);
-    chat.setString("Start typing");
-    chat.setPosition(sf::Vector2f(825, 770));
+    chat.setString("Start typing, and press enter to send");
+    chat.setPosition(sf::Vector2f(685, 770));
 
 
     while (true) 
@@ -371,7 +371,6 @@ int main(int argc, char* argv[]) {
 
                 if (unicodeChar >= 32 && unicodeChar != 127) {
                     userInput += unicodeChar;
-                    std::cout << "Character typed: " << static_cast<char>(unicodeChar) << std::endl;
                 }
                 // Handle backspace
                 else if (unicodeChar == 8 && !userInput.empty()) {
@@ -384,8 +383,10 @@ int main(int argc, char* argv[]) {
             {
                 if (keyPressed->scancode == sf::Keyboard::Scancode::Enter)
                 {
+
                     send_message(userInput);
                     userInput.clear();
+                    //chat.setString("");
                     
                 }
             }
